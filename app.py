@@ -1,5 +1,5 @@
 from flask import Flask
-import psycopg2
+import psycopg
 
 app = Flask(__name__)
 
@@ -9,13 +9,13 @@ def hello_world():
 
 @app.route('/db_test')
 def db_test():
-    conn = psycopg2.connect("postgresql://lab_10_db_f8wj_user:0vBxKQt9dbeeF7ej1aZHAqZejc3QhSpp@dpg-d23e6lfdiees739hrpcg-a/lab_10_db_f8wj")
+    conn = psycopg.connect("postgresql://lab_10_db_f8wj_user:0vBxKQt9dbeeF7ej1aZHAqZejc3QhSpp@dpg-d23e6lfdiees739hrpcg-a/lab_10_db_f8wj")
     conn.close()
     return "Database Connection Successful"
 
 # @app.route('/db_create')
 # def db_create():
-#     conn = psycopg2.connect("postgresql://lab_10_db_f8wj_user:0vBxKQt9dbeeF7ej1aZHAqZejc3QhSpp@dpg-d23e6lfdiees739hrpcg-a/lab_10_db_f8wj")
+#     conn = psycopg.connect("postgresql://lab_10_db_f8wj_user:0vBxKQt9dbeeF7ej1aZHAqZejc3QhSpp@dpg-d23e6lfdiees739hrpcg-a/lab_10_db_f8wj")
 #     cur = conn.cursor()
 #     cur.execute('''
 #         CREATE TABLE IF NOT EXISTS Basketball(
